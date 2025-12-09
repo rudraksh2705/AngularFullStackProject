@@ -55,6 +55,7 @@ export class App {
 
           console.log(validData, "ngOn");
           this.details = [...validData];
+          this.formData = { name: "", age: "", phoneNo: "" }
           this.cd.detectChanges();
         });
       });
@@ -74,9 +75,11 @@ export class App {
 
           console.log(validData, "ngOn");
           this.details = [...validData];
+          this.formData = { name: "", age: "", phoneNo: "" }
           this.cd.detectChanges();
         });
       });
+
     }
   }
 
@@ -95,6 +98,7 @@ export class App {
 
         console.log(validData, "ngOn");
         this.details = [...validData];
+        this.formData = { name: "", age: "", phoneNo: "" }
         this.cd.detectChanges();
       });
     });
