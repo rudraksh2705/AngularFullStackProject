@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="left">
+    <div>
+      <label>Name :</label>
+      <input type="text" [(ngModel)]="formData.name" />
+    </div>
+
+    <div>
+      <label>Age :</label>
+      <input type="number" [(ngModel)]="formData.age" />
+    </div>
+
+    <div>
+      <label>Phone No :</label>
+      <input type="number" [(ngModel)]="formData.phoneNo" />
+    </div>
+
+    <div>
+      <button (click)="handleSave()">{{formData._id ? "Update" : "Save"}}</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div *ngIf="details.length === 0" class="loading">Loading...</div>
+
+    <table *ngIf="details.length > 0" class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data of details">
+          <td>{{data.name}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.phoneNo}}</td>
+          <td class="actions">
+            <button class="update" (click)="handleUpdate(data._id)">Update</button>
+            <button class="delete" (click)="handleDelete(data._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
